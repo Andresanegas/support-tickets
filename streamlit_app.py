@@ -11,11 +11,8 @@ st.set_page_config(page_title="RRHH YesBpo", page_icon="🌏")
 st.title("🌏 RRHH YesBpo")
 st.write("Tu herramienta para un registro eficiente💯")
 
-
-
 opciones_novedades = ["Incapacidad", "Llegada tarde", "Permiso"]
 
-import streamlit as st
 
 def main():
     st.title("Formulario de Novedades")
@@ -35,9 +32,7 @@ def main():
         # Mostrar el DataFrame en Streamlit
         st.write(data)
 
-        # Aquí puedes agregar la lógica para guardar el DataFrame en un archivo CSV o una base de datos
-        # Por ejemplo, para guardar en CSV:
-        # data.to_csv('novedades.csv', index=False)
+		data.to_excel('novedades.xlsx', index=False)
 
 if __name__ == "__main__":
     main()
