@@ -11,7 +11,7 @@ st.set_page_config(page_title="RRHH YesBpo", page_icon="🌏")
 st.title("🌏 RRHH YesBpo")
 st.write("Tu herramienta para un registro eficiente💯")
 
-
+opciones_novedades = ["Incapacidad", "Llegada tarde", "Otros"]
 
 import streamlit as st
 
@@ -19,7 +19,7 @@ def main():
     st.title("Formulario de Novedades")
 
     nombre = st.text_input("Nombre:")
-    novedad = st.text_area("Novedad:")
+    novedad = st.multiselect("Novedades:", opciones_novedades, default=["Incapacidad"])
     observacion = st.text_area("Observación:")
 
     if st.button("Guardar"):
