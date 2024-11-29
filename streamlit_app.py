@@ -13,35 +13,33 @@ st.write("Tu herramienta para un registro eficiente💯")
 
 
 
-import streamlit as st
 import pandas as pd
 
-# Cargar el DataFrame existente (si ya lo tienes)
-df = pd.read_csv('novedades.csv')  # Reemplaza 'novedades.csv' con la ruta correcta
+def crear_dataframe(nombre_archivo, datos):
+    """
+    Crea un DataFrame si no existe, de lo contrario lo carga.
 
-# Título de la aplicación
-st.title("Formulario de Novedades")
+    Args:
+        nombre_archivo (str): Nombre del archivo CSV donde se guardará el DataFrame.
+        datos (dict): Diccionario con los datos para crear el DataFrame.
+    """
 
-# Campos del formulario
-nombre = st.text_input("Nombre")
-novedad = st.selectbox("Novedad", ["Llegada tarde", "Incapacidad", "Ausencia"])
-fecha = st.date_input("Fecha")
+    try:
+        # Intentar cargar el DataFrame existente
+        df = pd.read_csv(nombre_archivo)
+        print("DataFrame cargado exitosamente.")
+    except FileNotFoundError:
+        # Si el archivo no existe, crear un nuevo DataFrame
+        df = pd.DataFrame(datos)
+        df.to_csv(nombre_archivo, index=False)
+        print("Nuevo DataFrame creado y guardado.")
 
-# Botón para agregar una nueva fila
-if st.button("Agregar"):
-    # Crear un nuevo diccionario con los datos del formulario
-    new_data = {'Nombre': [nombre], 'Novedad': [novedad], 'Fecha': [fecha]}
-    # Convertir el diccionario en un DataFrame
-    new_df = pd.DataFrame(new_data)
-    # Agregar la nueva fila al DataFrame original
-    df = pd.concat([df, new_df], ignore_index=True)
-    # Guardar los cambios en el archivo CSV
-    df.to_csv('novedades.csv', index=False)
-    st.success("Nueva fila agregada correctamente")
+    return df
 
-# Mostrar el DataFrame actualizado
-st.write("Datos actuales:")
-st.dataframe(df)
+# Ejemplo de uso:
+datos = {
+    'Nombre': ['Juan Pérez', 'María López'],
+    'Edad': [30, 25]
+}
 
-
-    
+nuevo_df = crear_dataframe('mi_dataframe.csv', datos)
