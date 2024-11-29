@@ -24,15 +24,7 @@ def main():
 
     if st.button("Guardar"):
         st.success("Datos guardados.")
-        # Aquí puedes agregar código para guardar los datos en una base de datos, archivo, etc.
-        # Por ejemplo, usando pandas y csv:
-        import pandas as pd
-
-        data = {'Nombre': [nombre], 'Novedad': [novedad], 'Observación': [observacion]}
-        df = pd.DataFrame(data)
-
-        # Guardar en un archivo CSV
-        df.to_csv('novedades.csv', mode='a', header=False, index=False)
+        
 
 if __name__ == "__main__":
     main()
