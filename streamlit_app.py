@@ -32,7 +32,7 @@ def main():
         # Mostrar el DataFrame en Streamlit
         st.write(data)
 
-	data.to_excel('novedades.xlsx', index=False)
+data.to_excel('novedades.xlsx', index=False)
 
 if __name__ == "__main__":
     main()
