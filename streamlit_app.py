@@ -19,7 +19,7 @@ def main():
     st.title("Formulario de Novedades")
 
     nombre = st.text_input("Nombre:")
-    novedad = st.multiselect("Novedades:", opciones_novedades, default=["Incapacidad"])
+    novedad = st.select("Novedades:", opciones_novedades, default=["Incapacidad"])
     observacion = st.text_area("Observación:")
 
     if st.button("Guardar"):
