@@ -11,7 +11,7 @@ st.set_page_config(page_title="RRHH YesBpo", page_icon="🌏")
 st.title("🌏 RRHH YesBpo")
 st.write("Tu herramienta para un registro eficiente💯")
 
-opciones_novedades = ["Incapacidad", "Llegada tarde", "Otros"]
+opciones_novedades = ["Incapacidad", "Llegada tarde", "Permiso"]
 
 import streamlit as st
 
