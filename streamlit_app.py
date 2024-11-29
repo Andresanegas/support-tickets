@@ -14,7 +14,7 @@ st.write("Tu herramienta para un registro eficiente💯")
 import datetime
 import random
 
-import altair as alt
+
 import numpy as np
 import pandas as pd
 import streamlit as st
