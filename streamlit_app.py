@@ -11,18 +11,7 @@ st.set_page_config(page_title="RRHH YesBpo", page_icon="🌏")
 st.title("🌏 RRHH YesBpo")
 st.write("Tu herramienta para un registro eficiente💯")
 
-import datetime
-import random
 
-
-import numpy as np
-import pandas as pd
-import streamlit as st
-
-# Show app title and description.
-st.set_page_config(page_title="RRHH YesBpo", page_icon="")
-st.title(" RRHH YesBpo")
-st.write("Tu herramienta para un registro eficiente")
 
 opciones_novedades = ["Incapacidad", "Llegada tarde", "Permiso"]
 
